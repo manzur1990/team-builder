@@ -1,3 +1,4 @@
+//In `Form.js` build out your markup
 import React, { useState } from 'react'
 
 
@@ -5,7 +6,7 @@ const Form = (props) => {
     console.log("formprops", props)
     const [avenger, setAvenger] = useState([{
         name: "",
-        herName: "",
+        heroName: "",
         superPower: ""
     }]);
 
@@ -21,13 +22,13 @@ const Form = (props) => {
     const handleSubmit = event => {
         event.preventDefault();
         // console.log(avenger.name);
-        // console.log(avenger.herName)
+        // console.log(avenger.heroName)
         // console.log(avenger.superPower)
 
-        props.addNewName(avenger);
+        props.addNewAvenger(avenger);
         setAvenger({
             name: "",
-            herName: "",
+            heroName: "",
             superPower: ''
         });
     }
@@ -36,28 +37,28 @@ const Form = (props) => {
         <div>
 
             <form onSubmit={handleSubmit}>
-                <label>Full Name</label>
+                <label>Full Name
                 <input
-                    type="text"
-                    name="name"
-                    value={avenger.name}
-                    onChange={handleChange}
+                        type="text"
+                        name="name"
+                        value={avenger.name}
+                        onChange={handleChange}
+                    /></label>
+                <label>Hero Name
+                <input
+                        type="text"
+                        name="heroName"
+                        value={avenger.heroName}
+                        onChange={handleChange}
+                    /></label>
+                <label>Super Power
+                <input
+                        type="text"
+                        name="superPower"
+                        value={avenger.superPower}
+                        onChange={handleChange}
+                    /></label>
 
-                />
-                <label>Hero Name</label>
-                <input
-                    type="text"
-                    name="herName"
-                    value={avenger.herName}
-                    onChange={handleChange}
-                />
-                <label>Super Power</label>
-                <input
-                    type="text"
-                    name="superPower"
-                    value={avenger.superPower}
-                    onChange={handleChange}
-                />
                 <button>Submit!</button>
             </form>
         </div>
