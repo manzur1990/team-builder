@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
 
-  const [avenger, setAvenger] = useState([  //Give the state variable you just declared a default value.
+  const [avenger, setAvenger] = useState([  
     {
       name: "Tony Stark",
       heroName: "Iron Man",
@@ -14,7 +14,6 @@ function App() {
     }]);
     
     const addNewAvenger = data => {
-      console.log("addNewAvenger:", data)
       const newAvenger = {
         name: data.name,
         heroName: data.heroName,
@@ -24,7 +23,6 @@ function App() {
     setAvenger([...avenger, newAvenger]);
   };
 
-  console.log("from app:",avenger)
   return (
     <div>
       <h1>Avanger Team Builder</h1>

@@ -1,16 +1,11 @@
-//In `Form.js` build out your markup
 import React, { useState } from 'react'
 
-
 const Form = (props) => {
-    console.log("formprops", props)
     const [avenger, setAvenger] = useState([{
         name: "",
         heroName: "",
         superPower: ""
     }]);
-
-
 
     const handleChange = event => {
         setAvenger({
@@ -21,9 +16,7 @@ const Form = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        // console.log(avenger.name);
-        // console.log(avenger.heroName)
-        // console.log(avenger.superPower)
+
 
         props.addNewAvenger(avenger);
         setAvenger({
@@ -37,21 +30,21 @@ const Form = (props) => {
         <div>
 
             <form onSubmit={handleSubmit}>
-                <label>Full Name
+                <label>Name:&nbsp;
                 <input
                         type="text"
                         name="name"
                         value={avenger.name}
                         onChange={handleChange}
                     /></label>
-                <label>Hero Name
+                <label>Hero Name:&nbsp;
                 <input
                         type="text"
                         name="heroName"
                         value={avenger.heroName}
                         onChange={handleChange}
                     /></label>
-                <label>Super Power
+                <label>Super Power:&nbsp;
                 <input
                         type="text"
                         name="superPower"
